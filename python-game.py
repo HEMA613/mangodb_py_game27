@@ -1,3 +1,9 @@
+from pymongo import MongoClient
+
+client = MongoClient("mongodb://localhost:27017/")
+db = client["jeumonstre"]
+
+
 # definir la liste des options
 # afficher les options numéroté
 # demande de choisir une option numéroté
@@ -25,4 +31,8 @@ def afficher_options(liste_options):
 mon_choix = afficher_options(options)
 print(f"Vous avez choisi : {mon_choix}")
 
+# créer son equipe
+#     chosir 3 joueur pour lequipe
+#     
+def créer_equipe():
 
