@@ -46,7 +46,15 @@ def est_choix_valide()
 #initialiser le compteur de vague a 0
 #enregistrer l'heure de départ : debut_vague = time.time()
 #affrontement en boucle jusqu' a la defaite
-#définir 'duree_vague' à 5 (ou 10) secondes
+#vérifier si on passe à la vague suivante :
+#condition 1 : temps_ecoule >= duree_vague
+#condition 2 : aucun monstre vivant dans monstres_en_jeu
+#si condition 1 ou condition 2 :
+#incrémenter vagues += 1
+#réinitialiser debut_vague = time.time()
+#tirer un nouveau monstre  et l'ajouter à monstres_en_jeu
+#afficher "Vague X !"
+#si montres meure avant la fin du temps lautre monstres enchaine
 #chaque personnage possede des point de vie + povoir recuperer sur mango db
 #verifier si il reste encore des monstre au moins 1 vivant
 #tant que les monstres pv > 0 equipe monstres vivant
