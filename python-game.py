@@ -2,7 +2,7 @@ import random
 import time
 from pymongo import MongoClient
 
-Récupérer personnages et monstres sur MongoDB
+#Récupérer personnages et monstres sur MongoDB
 client = MongoClient("mongodb://localhost:27017/")
 db = client["jeumonstre"]
 
@@ -88,6 +88,8 @@ def est_choix_valide(choix, minimum, maximum):
 #   afficher "Votre équipe :"
 #   pour chaque personnage dans equipe
 #       afficher le nom du personnage
+
+
 
 #choisir les monstres
 #   créer une liste vide 'monstres_en_jeu'
