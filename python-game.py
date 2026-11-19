@@ -102,12 +102,18 @@ def afficher_personnages():
 #       ajouter ce personnage à 'equipe'
 #       afficher que le personnage a été ajouté
 #   retourner l'equipe
-equipe =[]
-copie_personnages = personnages_dispo.copy()
 
 def afficher_personnages_restant():
-    while len(equipe) < 3: 
-       
+
+    while len(equipe) < 3:
+        
+        equipe =[]
+        copie_personnages = personnages_dispo.copy()
+        print("personnages restants")
+         afficher_personnages_restant(personnages_dispo.copy())
+
+
+
 
 
 #afficher l'equipe
@@ -182,4 +188,4 @@ def afficher_personnages_restant():
 #       afficher Victoire  et sauvegarder la victoire
 #   sinon
 #       afficher Défaite et sauvegarder la défaite
-#   afficher le classement
+#   afficher le classement 
