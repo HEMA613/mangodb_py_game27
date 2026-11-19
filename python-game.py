@@ -2,9 +2,9 @@ import random
 import time
 from pymongo import MongoClient
 
-# 1. Récupérer personnages et monstres sur MongoDB
+Récupérer personnages et monstres sur MongoDB
 client = MongoClient("mongodb://localhost:27017/")
-db = client["nom_de_ta_base"]  # À remplacer par le nom de votre base
+db = client["jeumonstre"]
 
 personnages_dispo = list(db["personnages"].find({}, {"_id": 0}))
 monstres_dispo = list(db["monstres"].find({}, {"_id": 0}))
@@ -42,88 +42,63 @@ def afficher_options_numerotees(options):
     for i, option in enumerate(options, start=1):
         print(f"{i}. {option}")
 
-def est_choix_valide()
-# connecter mango db
-#recuperer personnage et monstres sur mongo db
+def est_choix_valide(choix, minimum, maximum):
+    if not choix.isdigit():
+        return False
+    choix = int(choix)
+    if choix < minimum or choix > maximum:
+        return False
+    return True
+
+#entrer le pseudo du joueur
+#   tant que infini
+#       demander au joueur d'entrer son pseudo
+#       si le pseudo est valide
+#           retourner le pseudo
+#       afficher un message d'erreur et redemander le pseudo
+
+#pseudo est valide
+#   enlever les espaces au début et à la fin
+#   si le pseudo est vide
+#       retourner false
+#   retourner true
 
 
-#entrer le peuso du jouer 
-#   tant que le peuso pas valide 
-#         Affichage un message d'erreur et redemander le pseudo
-#Affichage des personnages disponibles
-#créé une liste vide 'equipe'
+#afficher personnages
+#   créer une liste vide 'noms'
+#   pour chaque personnage dans la liste
+#       ajouter le nom du personnage dans 'noms'
+#   afficher les options numerotees de 'noms'
 
-# Le joueur choisit 3 personnages différents :
-#   tant que l'equipe n'est pas complet :
+#creer equipe
+#   créer une liste vide 'equipe'
+#   créer une copie de personnages_dispo 
+#   tant que l'equipe n'est pas complète =3
+#       afficher les personnages restants
 #       demander un choix de personnage
-#       vérifier que la saisie est un nombre (isdigit)
-#       si saisie valide :
-#           convertir en entier et vérifier que le numéro existe dans la liste
-#           vérifier que le personnage n'est pas déjà dans 'equipe'
-#               ajouter le personnage à 'equipe'
-#               afficher que le personnage a été ajouté à la liste
-#       sinon :
+#       si le choix est valide (entre 1 et le nombre de restants)
+#           retirer de 'restants' le personnage choisi -1
+#           ajouter ce personnage à 'equipe'
+#           afficher que le personnage a été ajouté
+#       sinon
 #           afficher une erreur (saisir un nombre valide de la liste)
+#   retourner l'equipe
 
-# Vérification et affichage de l'équipe crée :
-#   afficher les 3 personnages choisis
+#afficher l'equipe
+#   afficher "Votre équipe :"
+#   pour chaque personnage dans equipe
+#       afficher - nom du personnage
 
-#creer une liste vide 'monstres_en_jeu'
-#choisir aléatoirement 3 monstres différents avec random.choice
-#  tant que longueur de 'monstre_en_jeu'
-#       tirer un monstre avec random.choisi
-#       verifier qu'il n'est pas deja choisi
-#          ajouter le monstre a 'monstre_en_jeu'
-#afficher les 3 monstres choisis
+#choisir les monstres
+#   créer une liste vide 'monstres_en_jeu'
+#   tant que la longueur de 'monstres_en_jeu' est inférieure à 3
+#       tirer un monstre avec random.choice
+#       si le monstre n'est pas déjà dans 'monstres_en_jeu'
+#           ajouter le monstre à 'monstres_en_jeu'
+#   retourner monstres_en_jeu
 
-
-# creation vague 
-
-
-
-#systeme de combat
-
-#   initialiser le compteur de vague a 0
-def debut_vague():
-#enregistrer l'heure de départ : debut_vague = time.time()
-
-#   affrontement en boucle jusqu' a la defaite
-while True:
-
-   temps_ecoule =
-   aucun_monstres =
-
-
-#vérifier si on passe à la vague suivante :
-#   condition 1 : temps_ecoule >= duree_vague
-#                temps_ecoule >= duree_vague or incrémenter vagues += 1 :
-#   condition 2 : aucun monstre vivant dans monstres_en_jeu
-
-#creer monstres en jeu
-#  si condition 1 ou condition 2 :
-#     incrémenter vagues += 1 
-#     réinitialiser debut_vague = time.time()
-#     tirer un nouveau monstre  et l'ajouter à monstres_en_jeu
-#   afficher "Vague X !"
-print(f"- {perso['nom']}")
-
-#chaque personnage possede des point de vie + povoir recuperer sur mango db
-#   verifier si il reste encore des monstre au moins 1 vivant
-#             tant que les monstres pv > 0 equipe monstres vivant
-#    verifier si il reste encore des personnage au moins 1 vivant
-#             tant que les personnage pv > 0 equipe personnage est vivant
-#          sinon personnage attacque toujour en 1er
-
-
-
-#classement des meilleurs scores
-#  verifier si victiore 
-#       mise a jour du score et sauvegarde dans la base de données + nom du joueur
-
-#classement des joueur
-#  verifier si defaite
-#       mise a jour de nombre de vagues + survecues + nom du joueur et sauvegarder dans la base de donnees
-
-
-
+#afficher les monstres
+#   afficher "Monstres en jeu :"
+#   pour chaque monstre dans monstres_en_jeu
+#       afficher le nom du monstre
 
