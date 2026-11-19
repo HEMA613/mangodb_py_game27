@@ -70,7 +70,7 @@ def est_choix_valide(choix, minimum, maximum):
 #       ajouter le nom du personnage dans 'noms'
 #   afficher les options numerotees de 'noms'
 
-#creer equipe
+#créer equipe
 #   créer une liste vide 'equipe'
 #   créer une copie de personnages_dispo 
 #   tant que l'equipe n'est pas complète =3
@@ -87,7 +87,7 @@ def est_choix_valide(choix, minimum, maximum):
 #afficher l'equipe
 #   afficher "Votre équipe :"
 #   pour chaque personnage dans equipe
-#       afficher - nom du personnage
+#       afficher le nom du personnage
 
 #choisir les monstres
 #   créer une liste vide 'monstres_en_jeu'
@@ -102,3 +102,56 @@ def est_choix_valide(choix, minimum, maximum):
 #   pour chaque monstre dans monstres_en_jeu
 #       afficher le nom du monstre
 
+#liste des vivants
+#   créer une liste vide 'vivants'
+#   pour chaque personnage dans la liste
+#       si sa vie est supérieure à 0
+#           ajouter le personnage à 'vivants'
+#   retourner vivants
+
+#attaquer
+#   choisir au hasard une cible dans les vivants de la liste cible
+#   calculer les degats : attaque de l'attaquant moins defense de la cible
+#   si les degats sont inférieurs à 1
+#       les degats valent 1 (toujours au moins 1 point de dégât)
+#   enlever les degats à la vie de la cible
+#   afficher "attaquant attaque cible (-degats pv)"
+
+#afficher la vague
+#   calculer le nombre de monstres morts : 3 - monstres vivants
+#   si morts = 0 : afficher "Vague 1 !"
+#   si morts = 1 : afficher "Vague 2 !"
+#   si morts = 2 : afficher "Round final !"
+
+#lancer combat
+#   initialiser vague_affichee à -1
+#   tant qu'il reste au moins 1 personnage vivant et au moins 1 monstre vivant
+#       calculer morts = 3 - nombre de monstres vivants
+#       si morts est différent de vague_affichee
+#           afficher la vague
+#           vague_affichee = morts
+#       chaque personnage vivant attaque un monstre en premier
+#       chaque monstre vivant attaque un personnage
+#   retourner vrai si il reste au moins 1 personnage vivant = victoire
+
+#sauvegarder victoire
+#   enregistrer dans la bdd : pseudo + résultat de victoire
+
+#sauvegarder defaite
+#   calculer le nombre de monstres morts : 3 - monstres vivants
+#   enregistrer dans la bdd : pseudo + résultat de défaite + monstres morts
+
+#afficher le classement
+#   pour chaque score dans la base de données
+#       afficher pseudo, résultat et monstres morts
+
+#jouer
+#   demander le pseudo
+#   créer l'équipe et l'afficher
+#   choisir les monstres et les afficher
+#   lancer le combat
+#   si victoire
+#       afficher Victoire  et sauvegarder la victoire
+#   sinon
+#       afficher Défaite et sauvegarder la défaite
+#   afficher le classement
