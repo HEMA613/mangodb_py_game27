@@ -45,16 +45,16 @@ def afficher_options_numerotees(options):
 def est_choix_valide()
 # connecter mango db
 #recuperer personnage et monstres sur mongo db
-# 
-#
+
+
 #entrer le peuso du jouer 
-#   tant que le peuso pas valide ressayez
+#   tant que le peuso pas valide 
 #         Affichage un message d'erreur et redemander le pseudo
 #Affichage des personnages disponibles
 #créé une liste vide 'equipe'
 
 # Le joueur choisit 3 personnages différents :
-#   tant que longueur de 'equipe' < 3 :
+#   tant que l'equipe n'est pas complet :
 #       demander un choix de personnage
 #       vérifier que la saisie est un nombre (isdigit)
 #       si saisie valide :
@@ -65,17 +65,28 @@ def est_choix_valide()
 #       sinon :
 #           afficher une erreur (saisir un nombre valide de la liste)
 
-# Vérification et affichage de l'équipe créée :
+# Vérification et affichage de l'équipe crée :
 #   afficher les 3 personnages choisis
 
+#creer une liste vide 'monstres_en_jeu'
+#choisir aléatoirement 3 monstres différents avec random.choice
+#  tant que longueur de 'monstre_en_jeu'
+#       tirer un monstre avec random.choisi
+#       verifier qu'il n'est pas deja choisi
+#          ajouter le monstre a 'monstre_en_jeu'
+#afficher les 3 monstres choisis
+
+
 # creation vague 
-#      
+
 
 
 #systeme de combat
+
 #   initialiser le compteur de vague a 0
 def debut_vague():
 #enregistrer l'heure de départ : debut_vague = time.time()
+
 #   affrontement en boucle jusqu' a la defaite
 while True:
 
@@ -87,6 +98,7 @@ while True:
 #   condition 1 : temps_ecoule >= duree_vague
 #                temps_ecoule >= duree_vague or incrémenter vagues += 1 :
 #   condition 2 : aucun monstre vivant dans monstres_en_jeu
+
 #creer monstres en jeu
 #  si condition 1 ou condition 2 :
 #     incrémenter vagues += 1 
@@ -94,6 +106,7 @@ while True:
 #     tirer un nouveau monstre  et l'ajouter à monstres_en_jeu
 #   afficher "Vague X !"
 print(f"- {perso['nom']}")
+
 #chaque personnage possede des point de vie + povoir recuperer sur mango db
 #   verifier si il reste encore des monstre au moins 1 vivant
 #             tant que les monstres pv > 0 equipe monstres vivant
@@ -110,8 +123,6 @@ print(f"- {perso['nom']}")
 #classement des joueur
 #  verifier si defaite
 #       mise a jour de nombre de vagues + survecues + nom du joueur et sauvegarder dans la base de donnees
-
-
 
 
 
