@@ -51,6 +51,7 @@ def est_choix_valide(choix, minimum, maximum):
     return True
 
 #entrer le pseudo du joueur
+
 #   tant que infini
 #       demander au joueur d'entrer son pseudo
 #       si le pseudo est valide
@@ -62,13 +63,34 @@ def est_choix_valide(choix, minimum, maximum):
 #   si le pseudo est vide
 #       retourner false
 #   retourner true
+def demander_pseudo():
+    while True:
+     pseudo = input("entrer votre pseudo").strip()
+     if pseudo != "":
+         return pseudo 
+     print("pseudo invalide")
 
+def pseudo_valide(pseudo):
+    pseudo = pseudo.strip()
+    if pseudo == "":
+        return False
+    return True
+         
 
 #afficher personnages
 #   créer une liste vide 'noms'
 #   pour chaque personnage dans la liste
 #       ajouter le nom du personnage dans 'noms'
 #   afficher les options numerotees de 'noms'
+def afficher_personnages():
+    noms =[]
+    for personages in personnages_dispo:
+        noms.append(personages["noms"])
+
+    afficher_options_numerotees(noms) 
+
+
+
 
 #créer equipe
 #   créer une liste vide 'equipe'
@@ -76,13 +98,17 @@ def est_choix_valide(choix, minimum, maximum):
 #   tant que l'equipe n'est pas complète =3
 #       afficher les personnages restants
 #       demander un choix de personnage
-#       si le choix est valide (entre 1 et le nombre de restants)
-#           retirer de 'restants' le personnage choisi -1
-#           ajouter ce personnage à 'equipe'
-#           afficher que le personnage a été ajouté
-#       sinon
-#           afficher une erreur (saisir un nombre valide de la liste)
+#       retirer de 'restants' le personnage choisi -1
+#       ajouter ce personnage à 'equipe'
+#       afficher que le personnage a été ajouté
 #   retourner l'equipe
+equipe =[]
+copie_personnages = personnages_dispo.copy()
+
+def afficher_personnages_restant():
+    while len(equipe) < 3: 
+       
+
 
 #afficher l'equipe
 #   afficher "Votre équipe :"
@@ -132,7 +158,7 @@ def est_choix_valide(choix, minimum, maximum):
 #       si morts est différent de vague_affichee
 #           afficher la vague
 #           vague_affichee = morts
-#       chaque personnage vivant attaque un monstre en premier
+#       chaque personnage vivant attaque un monstre
 #       chaque monstre vivant attaque un personnage
 #   retourner vrai si il reste au moins 1 personnage vivant = victoire
 
