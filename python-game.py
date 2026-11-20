@@ -83,13 +83,21 @@ def pseudo_valide(pseudo):
 #       ajouter le nom du personnage dans 'noms'
 #   afficher les options numerotees de 'noms'
 def afficher_personnages():
-    noms =[]
+    noms = []
     for personages in personnages_dispo:
         noms.append(personages["noms"])
 
     afficher_options_numerotees(noms) 
 
 
+
+def creer_equipe():
+    equipe[]:
+
+    copie_personnages = list(personnages_dispo)
+    while len(personnages_dispo) > 3:
+        print("personnage restants")
+        
 
 
 #créer equipe
@@ -103,14 +111,7 @@ def afficher_personnages():
 #       afficher que le personnage a été ajouté
 #   retourner l'equipe
 
-def afficher_personnages_restant():
 
-    while len(equipe) < 3:
-        
-        equipe =[]
-        copie_personnages = personnages_dispo.copy()
-        print("personnages restants")
-         afficher_personnages_restant(personnages_dispo.copy())
 
 
 
